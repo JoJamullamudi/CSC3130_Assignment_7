@@ -23,16 +23,16 @@ public class DirectOrUndirect {
             int a = check.poll();
             for ( int b = 0; b < n; b++)
             {
-                if (!nodes_visited[b] && ( matrix[a][b]) == 1 || matrix[b][a] == 1) )
+                if (!nodes_visited[b] && ( matrix[a][b] == 1 || matrix[b][a] == 1)) // only looks at unvisited node and checks if theirs an edge from a to b or from b to a.
                 {
-                    nodes_visited[b] = true;
-                    check.add(b);
+                    nodes_visited[b] = true; // if conditions are meet mark node as visited
+                    check.add(b); // add it to the queue
                     vcount++;
                 }
             }
         }
 
-        if (vcount == n)
+        if (vcount == n) // if all nodes are visited mark true
         {
             return true;
         }

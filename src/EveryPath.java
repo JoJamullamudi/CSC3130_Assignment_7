@@ -7,7 +7,7 @@ public class EveryPath {
         ArrayList<Graph.Vertex> vertices = new ArrayList<>(g.getVertices()); // get all vertices from graph on a list
 
         for(int a = 0; a < g.getVertices().size(); a++){
-            Graph.Vertex start = g.getVertex(a); // current starting vertex
+            Graph.Vertex start = vertices.get(a); // current starting vertex
             ArrayList<Graph.Vertex> path = new ArrayList<>();
             path.add(start); // add starting vertex to path
             CycleCheck(g, start, start, path); // starts the search
@@ -36,6 +36,25 @@ public class EveryPath {
 
     }
 
+    public static void main(String[] args){
+
+        Graph g = new Graph();
+
+        Graph.Vertex v0 = g.addVertex("A");
+        Graph.Vertex v1 = g.addVertex("B");
+        Graph.Vertex v2 = g.addVertex("C");
+        Graph.Vertex v3 = g.addVertex("D");
+
+        g.addDirectedEdge(v0, v1, 1);
+        g.addDirectedEdge(v1, v2, 2);
+        g.addDirectedEdge(v2, v3, 3);
+        g.addDirectedEdge(v3, v0, 4);
+        g.addDirectedEdge(v0, v2, 5);
+        g.addDirectedEdge(v3, v1, 6);
+        g.addDirectedEdge(v1, v0, 7);
+
+        cycle(g);
+    }
 
 
 

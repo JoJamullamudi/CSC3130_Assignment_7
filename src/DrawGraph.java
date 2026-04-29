@@ -25,6 +25,24 @@ public class DrawGraph {
 
     }
 
+    public static void main(String[] args)
+    {
+        String input = "ANT CUN BOG AMA DC TOL SAN";
+
+        int[][] print = draw(input);
+
+        for ( int a = 0; a<print.length; a++)
+        {
+            for ( int b = 0; b<print[a].length; b++)
+            {
+                System.out.print(print[a][b] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
 
 
 }

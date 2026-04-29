@@ -20,7 +20,7 @@ public class DirectOrUndirect {
 
         while(!check.isEmpty())
         {
-            int a = check.poll();
+            int a = check.poll(); // brings out the first number on the list and remove it from the list.
             for ( int b = 0; b < n; b++)
             {
                 if (!nodes_visited[b] && ( matrix[a][b] == 1 || matrix[b][a] == 1)) // only looks at unvisited node and checks if theirs an edge from a to b or from b to a.
@@ -43,6 +43,45 @@ public class DirectOrUndirect {
 
     public static void main(String[] args)
     {
+        int[][] mat = { {0,1,0},
+                        {0,0,0},
+                        {0,1,0} };
+        int node = 3;
+
+        if ( isWeaklyConnected(mat, node)) {
+            System.out.println("This Matrix is weakly connected");
+        }
+        else
+        {
+            System.out.println("This Martix is not weakly connected");
+        }
+
+        int[][] matr = { {0,1,0},
+                        {0,0,0},
+                        {0,0,1} };
+        int nodes = 3;
+
+        if ( isWeaklyConnected(matr, nodes)) {
+            System.out.println("This Matrix is weakly connected");
+        }
+        else
+        {
+            System.out.println("This Martix is not weakly connected");
+        }
+
+        int[][] ma = { {0,1,0},
+                        {1,0,1},
+                        {0,1,1} };
+        int nod = 3;
+
+        if ( isWeaklyConnected(ma, nod)) {
+            System.out.print("This Matrix is weakly connected");
+        }
+        else
+        {
+            System.out.print("This Martix is not weakly connected");
+        }
+
 
     }
 
